@@ -1,0 +1,7 @@
+driverClassName=com.mysql.jdbc.Driver
+url=jdbc:mysql://localhost:3306/test
+username=root
+password=213211
+maxActive=50			// 最大连接数 	0无限
+maxIdle=20			// 最大空闲数	0无线
+maxWait=60000			// 最大等待毫秒值-1无限

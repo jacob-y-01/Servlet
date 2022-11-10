@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="通过ServletContext共享数据:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/ServletContext_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="通过ServletContext共享数据/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="通过ServletContext共享数据" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

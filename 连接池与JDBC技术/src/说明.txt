@@ -1,0 +1,7 @@
+driver=com.mysql.jdbc.Driver                            // jdbc驱动名
+url=jdbc:mysql://localhost:3306/studentinfomanagement   // 最后一个是数据库名
+user=root
+password=213211
+maxActive=50                                            // 最大活跃连接数，0无限
+maxIdle=20                                              // 最大空闲连接数，0无限
+maxWait=60000                                           // 最大等待毫秒数,-1无限
