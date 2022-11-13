@@ -5,7 +5,7 @@
          version="4.0">
     <servlet>
         <servlet-name>Login</servlet-name>
-        <servlet-class>LoginCookieServlet</servlet-class>
+        <servlet-class>SessionServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>

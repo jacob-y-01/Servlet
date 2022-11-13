@@ -71,7 +71,14 @@ public class LoginCookieServlet extends HttpServlet {
         resp.setContentType("text/html");
         resp.setCharacterEncoding("utf-8");
 
+        //通过请求获取Cookie
+        Cookie[] cookies = req.getCookies();
+        for(int i = 0; i<cookies.length;i++)
+        {
+            System.out.println(cookies[i].getValue());
+        }
 
+        // 判断是否是合法用户登录，是则发送cookie，并且响应正确页面
         if (req.getParameter("username").equals("admin")&&req.getParameter("password").equals("123")) {
             Cookie Cusername=new Cookie("username",req.getParameter("username"));
             Cookie Cpassword=new Cookie("password",req.getParameter("password"));
