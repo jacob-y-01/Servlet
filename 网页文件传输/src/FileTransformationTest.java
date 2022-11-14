@@ -10,6 +10,7 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URLEncoder;
 
 /**
  * @author Jacob-Y
@@ -59,21 +60,32 @@ public class FileTransformationTest extends HttpServlet {
 
 
 
+
         //判断选项，根据选择，返回文件
         switch (role[0])
         {
             case "word":
+                resp.setContentType("application/msword;charset=UTF-8");
+                resp.setHeader("content-disposition", "attachment;filename=" + URLEncoder.encode("word文档下载测试.docx", "UTF-8"));
                 resp.getOutputStream().write(ReadFile("D:\\Desktop\\servlet\\网页文件传输\\CZ0419030161余子贤任务规划.docx"));
                 break;
             case "exe":
+                resp.setContentType("text/x-msdownload;charset=UTF-8");
+                resp.setHeader("content-disposition", "attachment;filename=" + URLEncoder.encode("exe下载测试.exe", "UTF-8"));
                 resp.getOutputStream().write(ReadFile("D:\\Desktop\\servlet\\网页文件传输\\baidunetdisk.exe"));
                 break;
             case "png":
+                resp.setContentType("application/x-png;charset=UTF-8");
+                resp.setHeader("content-disposition", "attachment;filename=" + URLEncoder.encode("图片下载测试.png", "UTF-8"));
                 resp.getOutputStream().write(ReadFile("D:\\Desktop\\servlet\\网页文件传输\\课表.PNG"));
                 break;
-            case "video":resp.getOutputStream().print("cannot sport the video！");
+            case "video":
+                resp.setHeader("content-type", "text/html;charset=UTF-8");
+                resp.getWriter().print("无法响应视频（我暂时没搞）！");
                 break;
             case "tar":
+                resp.setContentType("text/x-msdownload;charset=UTF-8");
+                resp.setHeader("content-disposition", "attachment;filename=" + URLEncoder.encode("压缩包下载测试.zip", "UTF-8"));
                 resp.getOutputStream().write(ReadFile("D:\\Desktop\\servlet\\网页文件传输\\课表.zip"));
                 break;
         }
